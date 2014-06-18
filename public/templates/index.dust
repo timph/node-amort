@@ -1,0 +1,31 @@
+{>"layouts/master" /}
+	{<title}
+    {@pre type="content" key="index.greeting"/}
+	{/title}
+
+{<body}
+	<center>
+    <h1>{@pre type="content" key="index.greeting"/}</h1>
+	</center>
+	{@pre type="content" key="amort.greeting"/}
+	<br/>
+	<br/>
+	{err}
+	<form action="/amortization" method="POST">
+	<label for="amount">{@pre type="content" key="amort.borrow.amount"/}</label>
+	<input type="number" name="amount" autofocus="true"/><br/>
+	<label for="apr">{@pre type="content" key="amort.apr"/}</label>
+	<input type="number" name="apr"/><br/>
+	<label for="loanTerm">{@pre type="content" key="amort.loan.term"/}</label>
+	<input type="number" name="loanTerm"/><br/>
+	<br/>
+	<input type="hidden" name="_csrf" value="{_csrf}">
+
+
+	<input value="Submit" type="submit"/>
+	<input value="Reset" type="reset"/>
+	</form>
+
+	<br/>
+
+{/body}
